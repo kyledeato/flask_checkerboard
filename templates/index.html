@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Checkerboard</h1>
+
+    <main>
+        <table>
+            {% for x in range(width) %}
+            <tr>
+                {% for i in range(height) %}
+                <td class="box{{ (x + i)%2+1 }}"></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>
